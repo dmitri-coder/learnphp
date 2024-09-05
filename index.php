@@ -1,13 +1,26 @@
 <?php
 
-$array = [1,2,3,4];
-array_push($array,5,6,7);
-$array[] = 8;
-$array[4] = 123123123;
-var_dump($array);
+class Kast {
+    public $height;
+    public $width;
+    public $length;
 
-function hello($name){
-    echo "hello $name\n";
+    public function volume(){
+        return $this->height * $this->width * $this->length;
+    }
 }
 
-hello('karin');
+$box = new Kast();
+$box->height = 1;
+$box->width = 2;
+$box->length = 3;
+var_dump($box);
+$box2 = new Kast();
+$box2->height = 4;
+$box2->width = 5;
+$box2->length = 6;
+var_dump($box);
+var_dump($box2);
+
+var_dump($box->volume());
+var_dump($box2->volume());
