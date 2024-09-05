@@ -1,38 +1,13 @@
 <?php
 
-$a = 1;
-$a++;
-$a--;
-$a+=2;
-$a-=2;
-$a*=2;
-$a/=2;
-$a%=2;
-
-$a = 'Snus' . ' o';
-$a .=' clock';
-$array = [0,9,52];
-
-var_dump($array);
-$array = [
-    'essa' => 1,
-    'tessa' => 2,
-    'nig' => 3,
-];
-var_dump($array['nig']);
-
+$array = [1,2,3,4];
+array_push($array,5,6,7);
+$array[] = 8;
+$array[4] = 123123123;
 var_dump($array);
 
-foreach($array as $key => $value){
-    //echo $key . '=>' $value . "\n";
+function hello($name){
+    echo "hello $name\n";
 }
-$name = 'Karin';
 
-$string = "hello $name\n";
-var_dump($string);
-$char = 'a';
-
-for($i=0;$i<100;$i++){
-    var_dump($char);
-    $char++;
-}
+hello('karin');
