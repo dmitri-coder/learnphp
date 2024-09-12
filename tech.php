@@ -1,9 +1,9 @@
 <?php 
 $posts = [
-    ['title' => 'Some title 1', 'body' => 'Some body 1'],
-    ['title' => 'Some title 2', 'body' => 'Some body 2'],
-    ['title' => 'Some title 3', 'body' => 'Some body 3'],
-    ['title' => 'Some title 4', 'body' => 'Some body 4'],
+    ['title' => 'Some TECH 1', 'body' => 'Some TECH 1'],
+    ['title' => 'Some TECH 2', 'body' => 'Some TECH 2'],
+    ['title' => 'Some TECH 3', 'body' => 'Some TECH 3'],
+    ['title' => 'Some TECH 4', 'body' => 'Some TECH 4'],
 ];
 ?>
 <?php include 'partials/header.php'; ?>
