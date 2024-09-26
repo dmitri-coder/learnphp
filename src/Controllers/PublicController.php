@@ -11,21 +11,23 @@ class PublicController
     public function index()
     {
         
-        $posts = Post::all();
-        view('index');
+        dd($_COOKIE);
+       // $posts = Post::all();
+       // view('index');
+        //view('index', ['posts' => $posts]);
     }
 
     public function us()
     {
         $posts = Post::all();
         include 'views/us.php';
-        view('us');
+        view('us', compact('posts'));
     }
 
     public function tech()
     {
         $posts = Post::all();
-        view('tech');
+        view('tech', compact('posts'));
     }
 
     public function form()
@@ -41,7 +43,7 @@ class PublicController
         //$fname = isset($_GET['fname']) ? $_GET['fname'] : null;
 
         $fname = $_POST['fname'] ?? null;
-        view('form');
+        view('form', compact('fname'));
     }
 
     public function answer()

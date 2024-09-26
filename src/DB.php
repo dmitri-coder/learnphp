@@ -11,9 +11,7 @@ class DB
     public function __construct()
     {
         try {
-            $this->conn = new PDO('sqlite:'. __DIR__ . '/../db.sqlite');
-            // set the PDO error mode to exception
-            $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $this->conn = new PDO('sqlite:' . __DIR__ . '/../db.sqlite');
         } catch (PDOException $e) {
             echo "Connection failed: " . $e->getMessage();
         }
@@ -48,10 +46,28 @@ class DB
         $this->conn->exec($sql);
     }
 
-    public function delete($table, $id){
+    public function delete($table, $id)
+    {
+
         $sql = "DELETE FROM $table WHERE id=$id";
 
         // use exec() because no results are returned
         $this->conn->exec($sql);
     }
 }
+
+public function update($table, $fields, $id)
+    {
+        $updateFieldsText = '';
+        foreach($fields as $key=>$value){
+            $updateFieldsText .= "$key='$value', ";
+        }
+        $updateFieldsText = substr($updateFieldsText, 0, -2);
+        $sql = "UPDATE $table SET $updateFieldsText WHERE id=$id";
+        
+        // Prepare statement
+        $stmt = $this->conn->prepare($sql);
+
+        // execute the query
+        $stmt->execute();
+    }

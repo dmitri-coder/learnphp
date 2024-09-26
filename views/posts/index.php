@@ -1,4 +1,4 @@
-<?php include 'views/partials/header.php'; ?>
+<?php include __DIR__ . '/../partials/header.php'; ?>
 
 <main class="container">
     <a href="/admin/posts/create" class="btn btn-primary">New Post</a>
@@ -16,7 +16,7 @@
                     <td>
                         <div class="btn-group" role="group" aria-label="Basic mixed styles example">
                             <a class="btn btn-info">View</a>
-                            <a class="btn btn-warning">Edit</a>
+                            <a class="btn btn-warning" href="/admin/posts/edit?id=<?=$post->id?>">Edit</a>
                             <a class="btn btn-danger" href="/admin/posts/delete?id=<?=$post->id?>" >Delete</a>
                         </div>
                     </td>
@@ -26,4 +26,4 @@
     </table>
 </main>
 
-<?php include 'views/partials/footer.php'; ?>
+<?php include __DIR__ .  '/../partials/footer.php'; ?>
