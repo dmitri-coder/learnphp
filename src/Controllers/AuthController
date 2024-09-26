@@ -1,0 +1,34 @@
+<?php
+
+namespace App\Controllers;
+
+class PostsController
+{
+    public function registerForm(){
+        view('auth/register');
+    }
+    public function register(){
+        $user = User::where('email', $_POST['email'])
+        if(count($iser) === 0 && $_POST['password'] === $_POST['password_confirm']){
+        dump($_POST);
+        $user = new User();
+        $user->email = $_POST['email']
+        $user->password = $_POST['password']
+        $user->save();
+        redirect('/');
+        } else {
+            redirect('/register');
+        }
+
+    }
+    public function loginForm(){
+
+    }
+    public function login(){
+        
+    }
+    public function logout(){
+        
+    }
+}
+

@@ -10,9 +10,10 @@ class PublicController
 {
     public function index()
     {
-        
-        setcookie('mycookie', 'tasty',time() + 30 * 24 * 60 * 60 );
-        dd($_COOKIE);
+        session_start();
+        dump($_SESSION);
+        //setcookie('mycookie', 'tasty',time() + 30 * 24 * 60 * 60 );
+        //dd($_COOKIE);
        // $posts = Post::all();
        // view('index');
         //view('index', ['posts' => $posts]);
