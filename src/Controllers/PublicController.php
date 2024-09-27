@@ -10,19 +10,16 @@ class PublicController
 {
     public function index()
     {
-        session_start();
-        dump($_SESSION);
-        //setcookie('mycookie', 'tasty',time() + 30 * 24 * 60 * 60 );
-        //dd($_COOKIE);
-       // $posts = Post::all();
-       // view('index');
+        
+        $posts = Post::all();
+        view('index', compact('posts'));
         //view('index', ['posts' => $posts]);
     }
 
     public function us()
     {
         $posts = Post::all();
-        include 'views/us.php';
+        dd($posts);
         view('us', compact('posts'));
     }
 
@@ -30,6 +27,7 @@ class PublicController
     {
         $posts = Post::all();
         view('tech', compact('posts'));
+       
     }
 
     public function form()

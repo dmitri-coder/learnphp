@@ -1,8 +1,9 @@
 <?php include __DIR__ . '/../partials/header.php'; ?>
+
 <main class="container">
     <form method="POST" action="/admin/posts/edit?id=<?=$post->id?>">
         <div class="mb-3">
-            <label for="title" class="form-label">Title</label>
+        <textarea name="body" class="form-control" id="body" rows="3"><?=$post->body?></textarea>
             <input name="title" type="text" class="form-control" id="title" value="<?=$post->title?>">
         </div>
         <div class="mb-3">
@@ -14,4 +15,5 @@
         </div>
     </form>
 </main>
+
 <?php include __DIR__ .  '/../partials/footer.php'; ?>

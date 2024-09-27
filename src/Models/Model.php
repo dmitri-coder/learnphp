@@ -20,20 +20,20 @@ class Model {
 
     public static function where($field, $value){
         $db = new DB();
-        return $db->where(static::$table, static::class, $fiedl, $value);
+        return $db->where(static::$table, static::class, $field, $value);
     }
 
     public function save(){
         $fields = get_object_vars($this);
         unset($fields['id']);
-        $d if($this->id){
+        $db = new DB();
+        if($this->id){
             $db->update(static::$table, $fields, $this->id);
         } else {
             $db->insert(static::$table, $fields);
-        }b = new DB();
-     
+        }
+        
     }
-
 
     public function delete(){
         $db = new DB();

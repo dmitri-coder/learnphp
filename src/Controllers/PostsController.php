@@ -29,7 +29,11 @@ class PostsController
     }
 
     public function update(){
-        dd($_POST);
+        $post = Post::find($_GET['id']);
+        $post->title = $_POST['title'];
+        $post->body = $_POST['body'];
+        $post->save();
+        redirect('/admin/posts');
     }
 
     public function destroy(){
@@ -38,5 +42,9 @@ class PostsController
             $post->delete();
         }
         redirect('/admin/posts');
+    }
+
+    public function show(){
+        
     }
 }
